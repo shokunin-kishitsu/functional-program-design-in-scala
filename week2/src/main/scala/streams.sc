@@ -7,4 +7,6 @@ def sieve(s: Stream[Int]): Stream[Int] =
 
 from(2).take(10).toList
 
-sieve(from(2)).take(10).toList
+val primes = sieve(from(2))
+
+primes.take(10).toList
