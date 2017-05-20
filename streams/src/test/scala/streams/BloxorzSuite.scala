@@ -64,6 +64,17 @@ class BloxorzSuite extends FunSuite {
     }
   }
 
+  test("paths from start for level 1") {
+    new Level1 {
+      assert(pathsFromStart.nonEmpty)
+    }
+  }
+
+  test("paths to goal for level 1") {
+    new Level1 {
+      assert(pathsToGoal.nonEmpty)
+    }
+  }
 
 	test("optimal solution for level 1") {
     new Level1 {
@@ -75,6 +86,13 @@ class BloxorzSuite extends FunSuite {
 	test("optimal solution length for level 1") {
     new Level1 {
       assert(solution.length == optsolution.length)
+    }
+  }
+
+  test("from for level 1") {
+    new Level1 {
+      val fromResult: Stream[(Block, List[Move])] = from(List((startBlock, List())).toStream, Set(startBlock))
+      assert(fromResult.nonEmpty)
     }
   }
 
